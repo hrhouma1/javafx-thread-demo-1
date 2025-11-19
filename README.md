@@ -1,51 +1,54 @@
-# Demonstration Pedagogique des Threads - JavaFX
+# Démonstration Pédagogique des Threads - JavaFX
 
 Application JavaFX professionnelle pour enseigner les concepts des threads en Java.
 
 ## Contenu de l'Application
 
-L'application contient **7 demonstrations interactives** :
+L'application contient **8 leçons interactives** :
 
-### LECONS PEDAGOGIQUES
-
-#### Lecon 1 : Premier Thread
+#### Leçon 1 : Premier Thread
 - Comprendre ce qu'est un thread
-- Creer et demarrer son premier thread
-- Difference entre `run()` et `start()`
+- Créer et démarrer son premier thread
+- Différence entre `run()` et `start()`
 
-#### Lecon 2 : Plusieurs Threads
-- Execution parallele de plusieurs threads
-- Chaque thread progresse independamment
-- Visualisation du parallelisme reel
+#### Leçon 2 : Plusieurs Threads
+- Exécution parallèle de plusieurs threads
+- Chaque thread progresse indépendamment
+- Visualisation du parallélisme réel
 
-#### Lecon 3 : Synchronisation
-- Probleme de "race condition"
-- Demonstration visuelle du bug
-- Solution avec le mot-cle `synchronized`
+#### Leçon 3 : Synchronisation
+- Problème de "race condition"
+- Démonstration visuelle du bug
+- Solution avec le mot-clé `synchronized`
 
-### DEMONSTRATIONS VISUELLES
+#### Leçon 4 : Compte Bancaire
+- **Scénario réaliste de double retrait**
+- Vous et votre conjoint(e) avec la même carte
+- Démonstration du hack bancaire SANS synchronisation
+- Solution sécurisée AVEC synchronisation
+- 2000$ retirés avec seulement 1000$ (race condition)
 
-#### Demo 4 : Progression Circulaire (NOUVEAU!)
+#### Leçon 5 : Progression Circulaire
 - **5 barres de progression circulaires**
 - Comme dans les applications modernes
-- Chaque cercle se remplit de 0% a 100%
-- Vitesses differentes pour chaque thread
+- Chaque cercle se remplit de 0% à 100%
+- Vitesses différentes pour chaque thread
 - Design professionnel et moderne
 
-#### Demo 5 : Trois Horloges
-- 3 horloges animees en parallele
-- Chaque horloge tourne a sa propre vitesse
-- Visualisation du temps reel
+#### Leçon 6 : Trois Horloges
+- 3 horloges animées en parallèle
+- Chaque horloge tourne à sa propre vitesse
+- Visualisation du temps réel
 
-#### Demo 6 : Progression Verticale
+#### Leçon 7 : Progression Verticale
 - 3 barres verticales
 - Progression de bas en haut
-- Differentes vitesses
+- Différentes vitesses
 
-#### Demo 7 : Progression Horizontale
+#### Leçon 8 : Progression Horizontale
 - 4 barres horizontales
-- Comme un gestionnaire de telechargement
-- Etats visibles (En attente, En cours, Termine)
+- Comme un gestionnaire de téléchargement
+- États visibles (En attente, En cours, Terminé)
 
 ## Lancement Rapide
 
@@ -60,20 +63,20 @@ mvn clean compile
 mvn javafx:run
 ```
 
-## Prerequis
+## Prérequis
 
-- Java 17 ou superieur
+- Java 17 ou supérieur
 - Maven 3.6+
-- JavaFX 21 (telecharge automatiquement)
+- JavaFX 21 (téléchargé automatiquement)
 
 ## Points Forts
 
 - Interface professionnelle sans emojis
-- **Gros boutons** faciles a cliquer
+- **Gros boutons** faciles à cliquer
 - Barres circulaires modernes
-- Code source simple et commente
-- Explications claires en francais
-- Demonstrations progressives
+- Code source simple et commenté
+- Explications claires en français
+- Démonstrations progressives
 
 ## Structure
 
@@ -81,54 +84,59 @@ mvn javafx:run
 threadsdemo1/
 ├── src/main/java/com/threadsdemo/
 │   ├── MainApp.java                   # Application principale
-│   ├── SimpleThreadDemo.java          # Lecon 1
-│   ├── MultiThreadDemo.java           # Lecon 2
-│   ├── SyncProblemDemo.java           # Lecon 3
-│   ├── CircularProgressDemo.java      # Demo circulaire (NOUVEAU)
-│   ├── ClockDemo.java                 # Demo horloges
-│   ├── VerticalProgressDemo.java      # Demo verticale
-│   └── HorizontalProgressDemo.java    # Demo horizontale
+│   ├── SimpleThreadDemo.java          # Leçon 1
+│   ├── MultiThreadDemo.java           # Leçon 2
+│   ├── SyncProblemDemo.java           # Leçon 3
+│   ├── BankAccountDemo.java           # Leçon 4
+│   ├── CircularProgressDemo.java      # Leçon 5
+│   ├── ClockDemo.java                 # Leçon 6
+│   ├── VerticalProgressDemo.java      # Leçon 7
+│   └── HorizontalProgressDemo.java    # Leçon 8
+├── documentation/
+│   └── GUIDE_UTILISATION.md           # Guide complet avec Mermaid
 ├── pom.xml
 ├── run.bat
 └── README.md
 ```
 
-## Concepts Enseignes
+## Concepts Enseignés
 
-- Creation de threads (extends Thread)
-- Methodes run() et start()
+- Création de threads (extends Thread)
+- Méthodes run() et start()
 - Thread.sleep()
-- Execution parallele
+- Exécution parallèle
 - Race condition
 - Synchronisation (synchronized)
-- Variables partagees
+- Variables partagées
 - Variables volatiles
+- Cas réel : compte bancaire
 
 ## Utilisation en Classe
 
-1. **Commencez par les lecons** (1, 2, 3) pour la theorie
-2. **Puis montrez les demos** (4, 5, 6, 7) pour les applications visuelles
-3. Les etudiants peuvent **experimenter** avec les parametres
-4. Le **journal d'execution** montre les evenements en temps reel
+1. **Leçons théoriques** (1, 2, 3, 4) : Concepts fondamentaux des threads
+2. **Leçons visuelles** (5, 6, 7, 8) : Applications pratiques et animations
+3. Les étudiants peuvent **expérimenter** avec les paramètres
+4. Le **journal d'exécution** montre les événements en temps réel
 
-## Caracteristiques Techniques
+## Caractéristiques Techniques
 
-- JavaFX Canvas pour les dessins personnalises
+- JavaFX Canvas pour les dessins personnalisés
 - GraphicsContext pour les cercles et horloges
-- Platform.runLater() pour la mise a jour UI
-- Threads avec volatile pour l'arret propre
-- Gestion memoire optimisee
+- Platform.runLater() pour la mise à jour UI
+- Threads avec volatile pour l'arrêt propre
+- Gestion mémoire optimisée
+- ScrollPane pour contenu responsive
 
-## Pour les Etudiants
+## Pour les Étudiants
 
-Chaque demonstration est autonome :
+Chaque démonstration est autonome :
 - Explications claires
 - Code visible
 - Boutons intuitifs
-- Journal detaille
-- Reinitialisation facile
+- Journal détaillé
+- Réinitialisation facile
 
-## Depannage
+## Dépannage
 
 **Erreur JavaFX manquant** :
 ```bash
@@ -141,10 +149,10 @@ java -version
 # Doit afficher version 17 ou plus
 ```
 
-## License
+## Licence
 
-Projet educatif libre d'utilisation pour l'enseignement.
+Projet éducatif libre d'utilisation pour l'enseignement.
 
 ---
 
-**Version professionnelle avec barres circulaires**
+**Version professionnelle avec compte bancaire et guide complet**
